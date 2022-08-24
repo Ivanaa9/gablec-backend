@@ -18,7 +18,7 @@ import java.util.Optional;
 @Service
 public class BookingService implements BookingServiceInterface { //ctor;
 
-    @Autowired
+//    @Autowired
     private final BookingRepository bookingRepository;
     public BookingService(BookingRepository bookingRepository) {  //ctor
         this.bookingRepository = bookingRepository;// todo: treba li ovo dvoje biti u istom ctoru? ili ne?
@@ -47,9 +47,9 @@ public class BookingService implements BookingServiceInterface { //ctor;
     }
 
     public Booking registerNewBooking(Booking booking) throws Exception {
-        if (!availableToday(booking)){
-            throw new Exception();
-        }
+//        if (!availableToday(booking)){
+//            throw new Exception();
+//        }
         booking.setName(booking.getName());
         booking.setEmail(booking.getEmail());
         booking.setMobile(booking.getMobile());
@@ -58,55 +58,53 @@ public class BookingService implements BookingServiceInterface { //ctor;
         return bookingRepository.save(booking);
     }
 
-
-    @Override
-    public Iterable<Booking> findAll(Sort sort) {
-        return null;
-    }
-    @Override
-    public Page<Booking> findAll(Pageable pageable) {
-        return null;
-    }
-    @Override
-    public <S extends Booking> S save(S entity) { return null; }
-    @Override
-    public <S extends Booking> Iterable<S> saveAll(Iterable<S> entities) {
-        return null;
-    }
-    @Override
-    public Optional<Booking> findById(Long aLong) {
-        return Optional.empty();
-    }
-    @Override
-    public boolean existsById(Long aLong) {
-        return false;
-    }
-    @Override
-    public Iterable<Booking> findAll() {
-        return null;
-    }
-    @Override
-    public Iterable<Booking> findAllById(Iterable<Long> longs) {
-        return null;
-    }
-    @Override
-    public long count() {
-        return 0;
-    }
-    @Override
-    public void deleteById(Long aLong) {    }
-    @Override
-    public void delete(Booking entity) {    }
-    @Override
-    public void deleteAllById(Iterable<? extends Long> longs) {    }
-    @Override
-    public void deleteAll(Iterable<? extends Booking> entities) {    }
-    @Override
-    public void deleteAll() { }
-
-
     // todo: naprwavbiti spremanje u bazu iz web app-a => getteri
 
+
+//    @Override
+//    public Iterable<Booking> findAll(Sort sort) {
+//        return null;
+//    }
+//    @Override
+//    public Page<Booking> findAll(Pageable pageable) {
+//        return null;
+//    }
+//    @Override
+//    public <S extends Booking> S save(S entity) { return null; }
+//    @Override
+//    public <S extends Booking> Iterable<S> saveAll(Iterable<S> entities) {
+//        return null;
+//    }
+//    @Override
+//    public Optional<Booking> findById(Long aLong) {
+//        return Optional.empty();
+//    }
+//    @Override
+//    public boolean existsById(Long aLong) {
+//        return false;
+//    }
+//    @Override
+//    public Iterable<Booking> findAll() {
+//        return null;
+//    }
+//    @Override
+//    public Iterable<Booking> findAllById(Iterable<Long> longs) {
+//        return null;
+//    }
+//    @Override
+//    public long count() {
+//        return 0;
+//    }
+//    @Override
+//    public void deleteById(Long aLong) {    }
+//    @Override
+//    public void delete(Booking entity) {    }
+//    @Override
+//    public void deleteAllById(Iterable<? extends Long> longs) {    }
+//    @Override
+//    public void deleteAll(Iterable<? extends Booking> entities) {    }
+//    @Override
+//    public void deleteAll() { }
 
 
 }

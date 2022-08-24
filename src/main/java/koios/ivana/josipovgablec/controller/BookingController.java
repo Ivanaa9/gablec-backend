@@ -3,6 +3,7 @@ package koios.ivana.josipovgablec.controller;
 import koios.ivana.josipovgablec.model.Booking;
 import koios.ivana.josipovgablec.repository.BookingRepository;
 import koios.ivana.josipovgablec.service.BookingService;
+import koios.ivana.josipovgablec.service.BookingServiceInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,11 +20,11 @@ public class BookingController {
     Logger logger = LoggerFactory.getLogger(BookingController.class);
 
 //    @Autowired
-    private BookingService bookingService;
+    private BookingServiceInterface bookingService;
 //    @Autowired
     private BookingRepository bookingRepository;
 
-    public BookingController(BookingService bookingService, BookingRepository bookingRepository) {
+    public BookingController(BookingServiceInterface bookingService, BookingRepository bookingRepository) {
         this.bookingService = bookingService;
         this.bookingRepository = bookingRepository;
     }
@@ -58,7 +59,7 @@ public class BookingController {
     }
 
     @PostMapping("/booking")
-    public ResponseEntity createNewBooking(@RequestBody Booking booking){
+    public ResponseEntity<Booking> createNewBooking(@RequestBody Booking booking){
         logger.info("Inside @PostMapping(booking) of BookingController");
         try {
             return new ResponseEntity<>(bookingService.registerNewBooking(booking), HttpStatus.OK);
