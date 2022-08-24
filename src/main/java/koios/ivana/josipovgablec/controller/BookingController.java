@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 
-@CrossOrigin(origins = "http://localhost:4201/") // dopustam angular frontendu spoj na ovaj kontroler
+@CrossOrigin(origins = "http://localhost:4201") // dopustam angular frontendu spoj na ovaj kontroler
 public class BookingController {
     Logger logger = LoggerFactory.getLogger(BookingController.class);
 
@@ -58,7 +58,7 @@ public class BookingController {
     }
 
     @PostMapping("/booking")
-    public ResponseEntity<Booking> createNewBooking(@RequestBody Booking booking){
+    public ResponseEntity createNewBooking(@RequestBody Booking booking){
         logger.info("Inside @PostMapping(booking) of BookingController");
         try {
             return new ResponseEntity<>(bookingService.registerNewBooking(booking), HttpStatus.OK);

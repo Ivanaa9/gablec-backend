@@ -38,11 +38,7 @@ public class BookingService implements BookingServiceInterface { //ctor;
 //        if(booking.getDateTime() == null){
 //            throw new Exception("You didn't provide date time");
 //        }
-        /** stavila sam ograničenje u frontendu: ne može submitati formu dok ne popuni sve tako da mi ne treba ovaj dio **/
-//        String dateTime = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").format(booking.getDateTime());
-//        if (dateTime == null) {
-//            throw new Exception("You didn't provide date time lalala");
-//        }
+
         List<Booking> bookToday = bookingRepository.findBookingByDateTime(booking.getDateTime());
         List<Booking> bookToday_2hours = bookingRepository.findBookingByDateTime(booking.getDateTime().plusHours(2));
         return bookToday_2hours.size() - bookToday.size() >= 0 && bookToday.size() < 15;
