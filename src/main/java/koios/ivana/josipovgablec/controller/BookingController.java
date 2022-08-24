@@ -2,7 +2,6 @@ package koios.ivana.josipovgablec.controller;
 
 import koios.ivana.josipovgablec.model.Booking;
 import koios.ivana.josipovgablec.repository.BookingRepository;
-import koios.ivana.josipovgablec.service.BookingService;
 import koios.ivana.josipovgablec.service.BookingServiceInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-
-@CrossOrigin(origins = "http://localhost:4201") // dopustam angular frontendu spoj na ovaj kontroler
+@CrossOrigin(origins = "http://localhost:4200") // dopustam angular frontendu spoj na ovaj kontroler
 public class BookingController {
     Logger logger = LoggerFactory.getLogger(BookingController.class);
 

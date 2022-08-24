@@ -24,11 +24,11 @@ public class BookingService implements BookingServiceInterface { //ctor;
         this.bookingRepository = bookingRepository;// todo: treba li ovo dvoje biti u istom ctoru? ili ne?
     }
 
-    public String saveBooking(Booking booking) {
-        bookingRepository.save(new Booking(0L, "Ivana", "ivana.bubalo@gmail.com",
-                "+385995023538", LocalDateTime.of(2022, 8, 8, 14, 00), 4));
-        return "Successful booking";
-    }
+//    public String saveBooking(Booking booking) {
+//        bookingRepository.save(new Booking(0L, "Ivana", "ivana.bubalo@gmail.com",
+//                "+385995023538", LocalDateTime.of(2022, 8, 8, 14, 00), 4));
+//        return "Successful booking";
+//    }
 
     public List<Booking> getAllBookings() {
         return bookingRepository.findAll();
@@ -43,6 +43,8 @@ public class BookingService implements BookingServiceInterface { //ctor;
         List<Booking> bookToday_2hours = bookingRepository.findBookingByDateTime(booking.getDateTime().plusHours(2));
         return bookToday_2hours.size() - bookToday.size() >= 0 && bookToday.size() < 15;
         // ako je u odabranom vremenu bookirano <15 bukinga i u naredna 2 sata će ostati isti broj slobodnih stolova (ili će se smanjiti), stol je available
+
+
 
     }
 
@@ -59,6 +61,8 @@ public class BookingService implements BookingServiceInterface { //ctor;
     }
 
     // todo: naprwavbiti spremanje u bazu iz web app-a => getteri
+
+
 
 
 //    @Override

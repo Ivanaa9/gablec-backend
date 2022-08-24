@@ -12,7 +12,5 @@ import java.util.List;
 public interface BookingRepository extends JpaRepository<Booking, Long>, JpaSpecificationExecutor<Booking> {
     List<Booking> findBookingByDateTime(LocalDateTime dateTime);
 
-
-
 }
 

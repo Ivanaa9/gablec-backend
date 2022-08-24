@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4201") // usmjeravam ga na angular frontend
+@CrossOrigin(origins = "http://localhost:4200") // usmjeravam ga na angular frontend
 public class MenuController {
 
     @Autowired
